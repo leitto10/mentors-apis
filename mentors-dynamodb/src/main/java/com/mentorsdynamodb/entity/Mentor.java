@@ -44,5 +44,11 @@ public class Mentor {
 	public void setNumberOfProjectsMentored(Integer numberOfProjectsMentored) {
 		this.numberOfProjectsMentored = numberOfProjectsMentored;
 	}
+
+	@Override
+	public String toString() {
+		return "Mentor [mentorId=" + mentorId + ", mentorName=" + mentorName + ", numberOfProjectsMentored="
+				+ numberOfProjectsMentored + "]";
+	}
 	
 }
