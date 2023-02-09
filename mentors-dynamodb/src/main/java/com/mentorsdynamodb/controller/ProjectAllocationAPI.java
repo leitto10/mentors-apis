@@ -3,6 +3,7 @@ package com.mentorsdynamodb.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -19,13 +20,12 @@ import com.mentorsdynamodb.service.ProjectAllocationService;
 @RequestMapping("/api")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProjectAllocationAPI {
+	
+	@Autowired
+	private Environment environment;
 
     @Autowired
-    public ProjectAllocationService projectAllocationService;
+    private ProjectAllocationService projectAllocationService;
 
-    @GetMapping("/projects")
-    public ResponseEntity<List<Project>> getProjects(){
-        List<Project> allProjects = projectAllocationService.getProjects();
-        return new ResponseEntity<>(allProjects, HttpStatus.OK);
-    }
+    
 }

@@ -15,8 +15,10 @@ public class Project {
     @DynamoDBAttribute(attributeName = "release_date")
     @DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.S)
     private LocalDate releaseDate;
-    @DynamoDBAttribute(attributeName = "mentor")
-    private Mentor mentor;
+    @DynamoDBAttribute(attributeName = "mentor_id")
+    private Integer mentorId;
+//    @DynamoDBAttribute(attributeName = "mentor")
+//    private Mentor mentor;
 
     public Project() {
 
@@ -38,12 +40,21 @@ public class Project {
     public LocalDate getReleaseDate() {
         return releaseDate;
     }
+    
 
-    public Mentor getMentor() {
-        return mentor;
-    }
+//    public Mentor getMentor() {
+//        return mentor;
+//    }
 
-    public void setProjectId(Integer projectId) {
+    public Integer getMentorId() {
+		return mentorId;
+	}
+
+	public void setMentorId(Integer mentorId) {
+		this.mentorId = mentorId;
+	}
+
+	public void setProjectId(Integer projectId) {
         this.projectId = projectId;
     }
 
@@ -59,7 +70,7 @@ public class Project {
         this.releaseDate = releaseDate;
     }
 
-    public void setMentor(Mentor mentor) {
-        this.mentor = mentor;
-    }
+//    public void setMentor(Mentor mentor) {
+//        this.mentor = mentor;
+//    }
 }
